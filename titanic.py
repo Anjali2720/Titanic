@@ -1,4 +1,4 @@
-import pandas as pd
+import pandas as pd 
 import numpy as np
 np.random.seed(32)
 import matplotlib.pyplot as plt
@@ -142,7 +142,7 @@ score_t = accuracy_score(test_target_d,predictions)
 print('test accuracy is',score_t)
 
 
-#For Submission
+#For Submission 
 p_id = testing_data['PassengerId']
 testing_data = clean_data(testing_data)
 
