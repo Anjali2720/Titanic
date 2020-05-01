@@ -142,11 +142,4 @@ score_t = accuracy_score(test_target_d,predictions)
 print('test accuracy is',score_t)
 
 
-#For Submission 
-p_id = testing_data['PassengerId']
-testing_data = clean_data(testing_data)
-
-prediction =new_clf.predict(testing_data)
-df = pd.DataFrame({'PassengerId':p_id,'Survived':prediction})
-df.to_csv('Titanic_prediction',index=False)
 
