@@ -141,19 +141,12 @@ score_t = accuracy_score(test_target_d,predictions)
 
 print('test accuracy is',score_t)
 
-#Running on whole Train Dataset
-training_data=clean_data(training_data)
-training_data_x = training_data.drop('Survived',axis=1)
-training_data_y =training_data['Survived']
-full_d_clf = new_clf.fit(training_data_x,training_data_y)
-prey =full_d_clf.predict(training_data_x)
-print(accuracy_score(training_data_y,prey),'is full training_score')
 
 #For Submission 
 p_id = testing_data['PassengerId']
 testing_data = clean_data(testing_data)
 
-prediction =full_d_clf.predict(testing_data)
+prediction =new_clf.predict(testing_data)
 df = pd.DataFrame({'PassengerId':p_id,'Survived':prediction})
 df.to_csv('Titanic_prediction',index=False)
 
